@@ -32,71 +32,71 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget{
-    MyHomePage({Key key}) : super(key: key);
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key}) : super(key: key);
 
-    @override
-    _MyHomePageState createState() => _MyHomePageState();
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>{
-    MyRandomColor _myRandomColor = MyRandomColor();
+class _MyHomePageState extends State<MyHomePage> {
+  MyRandomColor _myRandomColor = MyRandomColor();
 
-    void _getRandomColor(){
-        setState((){
-            this._myRandomColor.genColor();
-        });
-    }
+  void _getRandomColor() {
+    setState(() {
+      this._myRandomColor.genColor();
+    });
+  }
 
-    @override
-    Widget build(BuildContext context){
-        return GestureDetector(
-            onTap: (){
-                this._getRandomColor();
-            } ,
-        child: Container(
-          child: Center(
-            child: Text(
-              "Hey there",
-              style: TextStyle(
-                color: Colors.white,
-                shadows: <Shadow>[
-                  Shadow(
-                    color: Colors.black,
-                    offset: Offset(5.0, 5.0),
-                    blurRadius: 10.0,
-                  ),
-                ],
-                fontStyle: FontStyle.normal,
-                decoration: TextDecoration.none,
-              ),
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        this._getRandomColor();
+      },
+      child: Container(
+        child: Center(
+          child: Text(
+            "Hey there",
+            style: TextStyle(
+              color: Colors.white,
+              shadows: <Shadow>[
+                Shadow(
+                  color: Colors.black,
+                  offset: Offset(5.0, 5.0),
+                  blurRadius: 10.0,
+                ),
+              ],
+              fontStyle: FontStyle.normal,
+              decoration: TextDecoration.none,
             ),
           ),
-          color: _myRandomColor.getColor(),
+        ),
+        color: _myRandomColor.getColor(),
       ),
-  );
-    }
+    );
+  }
 }
 
-class MyRandomColor{
-    Color _color;
-    Random _random;
+class MyRandomColor {
+  Color _color;
+  Random _random;
 
-    MyRandomColor(){
-        this._color = Colors.white;
-        this._random = Random();
-    }
+  MyRandomColor() {
+    this._color = Colors.white;
+    this._random = Random();
+  }
 
-    Color getColor(){
-        return this._color;
-    }
+  Color getColor() {
+    return this._color;
+  }
 
-    void genColor(){
-        this._color = Color.fromARGB(
-            0xff,
-            this._random.nextInt(0x100),
-            this._random.nextInt(0x100),
-            this._random.nextInt(0x100),
-        );
-    }
+  void genColor() {
+    this._color = Color.fromARGB(
+      0xff,
+      this._random.nextInt(0x100),
+      this._random.nextInt(0x100),
+      this._random.nextInt(0x100),
+    );
+  }
 }
