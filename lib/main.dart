@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() => runApp(MyApp());
 
@@ -39,17 +40,21 @@ class MyHomePage extends StatefulWidget{
 }
 
 class _MyHomePageState extends State<MyHomePage>{
-    Color _myColor = Colors.white;
+    MyRandomColor _myRandomColor = MyRandomColor();
 
     void _getRandomColor(){
         setState((){
-            this._myColor = MyRandomColor(this._myColor).getColor();
+            this._myRandomColor.genColor();
         });
     }
 
     @override
     Widget build(BuildContext context){
-        return Container(
+        return GestureDetector(
+            onTap: (){
+                this._getRandomColor();
+            } ,
+        child: Container(
           child: Center(
             child: Text(
               "Hello App!",
@@ -63,22 +68,35 @@ class _MyHomePageState extends State<MyHomePage>{
                   ),
                 ],
                 fontStyle: FontStyle.normal,
+                decoration: TextDecoration.none,
               ),
             ),
           ),
-          color: _myColor,
-      );
+          color: _myRandomColor.getColor(),
+      ),
+  );
     }
 }
 
 class MyRandomColor{
     Color _color;
+    Random _random;
 
-    MyRandomColor(Color c){
-        this._color = Color(c.hashCode * 0x0ffffff + 0xff000000);
+    MyRandomColor(){
+        this._color = Colors.white;
+        this._random = Random();
     }
 
     Color getColor(){
         return this._color;
+    }
+
+    void genColor(){
+        this._color = Color.fromARGB(
+            0xff,
+            this._random.nextInt(0x100),
+            this._random.nextInt(0x100),
+            this._random.nextInt(0x100),
+        );
     }
 }
