@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       home: Container(
         child: Center(
           child: Text(
-            "Hello App!",
+            "Hey there",
             style: TextStyle(
               color: Colors.white,
               shadows: <Shadow>[
