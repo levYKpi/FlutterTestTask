@@ -7,36 +7,69 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Test Task",
-      home: Container(
-        child: Center(
-          child: Text(
-            "Hello App!",
-            style: TextStyle(
-              color: Colors.white,
-              shadows: <Shadow>[
-                Shadow(
-                  color: Colors.black,
-                  offset: Offset(4.0, 4.0),
-                  blurRadius: 2.0,
-                ),
-              ],
-              fontStyle: FontStyle.normal,
-            ),
-          ),
-        ),
-        color: Color(0xffff00ff),
-      ),
+      // home: Container(
+      //   child: Center(
+      //     child: Text(
+      //       "Hello App!",
+      //       style: TextStyle(
+      //         color: Colors.white,
+      //         shadows: <Shadow>[
+      //           Shadow(
+      //             color: Colors.black,
+      //             offset: Offset(4.0, 4.0),
+      //             blurRadius: 2.0,
+      //           ),
+      //         ],
+      //         fontStyle: FontStyle.normal,
+      //       ),
+      //     ),
+      //   ),
+      //   color: Color(0xffff00ff),
+      // ),
+      home: MyHomePage(),
     );
   }
 }
 
-// class MyHomePage extends StatefulWidget{
-//
-// }
-//
-// class MyHomePageState extends State<MyHomePage>{
-//
-// }
+class MyHomePage extends StatefulWidget{
+    MyHomePage({Key key}) : super(key: key);
+
+    @override
+    _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage>{
+    Color _myColor = Colors.white;
+
+    void _getRandomColor(){
+        setState((){
+            this._myColor = MyRandomColor(this._myColor).getColor();
+        });
+    }
+
+    @override
+    Widget build(BuildContext context){
+        return Container(
+          child: Center(
+            child: Text(
+              "Hello App!",
+              style: TextStyle(
+                color: Colors.white,
+                shadows: <Shadow>[
+                  Shadow(
+                    color: Colors.black,
+                    offset: Offset(5.0, 5.0),
+                    blurRadius: 10.0,
+                  ),
+                ],
+                fontStyle: FontStyle.normal,
+              ),
+            ),
+          ),
+          color: _myColor,
+      );
+    }
+}
 
 class MyRandomColor{
     Color _color;
