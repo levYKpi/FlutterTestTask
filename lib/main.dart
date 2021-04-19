@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             MyTextContainer(
-              "your color is: ${_myRandomColor.getColorVaue()}",
+              "your color is: ${this._myRandomColor.getColorVaue()}",
               FontStyle.normal,
               18.0,
             ),
@@ -60,13 +60,13 @@ class _MyHomePageState extends State<MyHomePage> {
               32.0,
             ),
             MyTextContainer(
-              "color in the list: ${_myRandomColor.getColorsListLength()}",
+              "color in the list: ${this._myRandomColor.getColorsListLength()}",
               FontStyle.normal,
               18.0,
             ),
           ],
         ),
-        color: _myRandomColor.getColor(),
+        color: this._myRandomColor.getColor(),
       ),
     );
   }

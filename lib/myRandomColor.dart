@@ -49,9 +49,9 @@ class MyRandomColor {
 
   List<int> getColorVaue() {
     List<int> list = [
-      _color.red,
-      _color.green,
-      _color.blue,
+      this._color.red,
+      this._color.green,
+      this._color.blue,
     ];
     return list;
   }

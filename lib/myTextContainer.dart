@@ -11,30 +11,30 @@ class MyTextContainer extends StatelessWidget {
       {Color fontColor: Colors.white,
       Color shadowColor: Colors.black,
       double shadow: 10.0}) {
-    _message = message;
-    _fontStyle = fontStyle;
-    _fontSize = fontSize;
-    _fontColor = fontColor;
-    _shadowColor = shadowColor;
-    _shadow = shadow;
+    this._message = message;
+    this._fontStyle = fontStyle;
+    this._fontSize = fontSize;
+    this._fontColor = fontColor;
+    this._shadowColor = shadowColor;
+    this._shadow = shadow;
   }
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: _fontSize * 2,
+      height: this._fontSize * 2,
       child: Text(
-        _message,
+        this._message,
         style: TextStyle(
-          color: _fontColor,
+          color: this._fontColor,
           shadows: <Shadow>[
             Shadow(
-              color: _shadowColor,
+              color: this._shadowColor,
               offset: Offset(0, 0),
-              blurRadius: _shadow,
+              blurRadius: this._shadow,
             ),
           ],
-          fontStyle: _fontStyle,
-          fontSize: _fontSize,
+          fontStyle: this._fontStyle,
+          fontSize: this._fontSize,
           decoration: TextDecoration.none,
         ),
       ),
