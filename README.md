@@ -1,16 +1,9 @@
 # test_task
+This is a test task by Solid Software.
+This app displays "Hey there" in the middle of the screen.
+Background color is randomly changing after tapping anywhere on the screen.
 
-A new Flutter project.
+You can use a long press anywhere on the screen to return previous background color 10 times.
+Also, you can see description of the color on the screen (in RGB format & position in the list).
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+You can run tests by typing "<project directory>$ flutter test"
