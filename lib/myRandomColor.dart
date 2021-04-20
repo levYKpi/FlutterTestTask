@@ -20,13 +20,20 @@ class MyRandomColor {
   }
 
   void genColor() {
-    this._color = Color.fromARGB(
-      0xff,
-      this._random.nextInt(0x100),
-      this._random.nextInt(0x100),
-      this._random.nextInt(0x100),
-    );
-
+    // if new color and _color are equal, then repeat
+    while (true) {
+      var newColor = Color.fromARGB(
+        0xff,
+        this._random.nextInt(0x100),
+        this._random.nextInt(0x100),
+        this._random.nextInt(0x100),
+      );
+      if (newColor != this._color) {
+        this._color = newColor;
+        break;
+      }
+    }
+    // add new color to the list
     this._colors.add(this._color);
     if (this._colorListLength >= 10) {
       this._colors.removeAt(0);
