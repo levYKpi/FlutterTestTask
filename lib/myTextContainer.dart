@@ -10,7 +10,7 @@ class MyTextContainer extends StatelessWidget {
   MyTextContainer(String message, FontStyle fontStyle, double fontSize,
       {Color fontColor: Colors.white,
       Color shadowColor: Colors.black,
-      double shadow: 10.0}) {
+      double shadow: 5.0}) {
     this._message = message;
     this._fontStyle = fontStyle;
     this._fontSize = fontSize;
@@ -26,6 +26,9 @@ class MyTextContainer extends StatelessWidget {
         this._message,
         style: TextStyle(
           color: this._fontColor,
+          fontStyle: this._fontStyle,
+          fontSize: this._fontSize,
+          decoration: TextDecoration.none,
           shadows: <Shadow>[
             Shadow(
               color: this._shadowColor,
@@ -33,9 +36,6 @@ class MyTextContainer extends StatelessWidget {
               blurRadius: this._shadow,
             ),
           ],
-          fontStyle: this._fontStyle,
-          fontSize: this._fontSize,
-          decoration: TextDecoration.none,
         ),
       ),
     );

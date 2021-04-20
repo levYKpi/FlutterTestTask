@@ -46,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
         this._setPreviousColor();
       },
       child: Container(
+        color: this._myRandomColor.getColor(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -66,7 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-        color: this._myRandomColor.getColor(),
       ),
     );
   }
