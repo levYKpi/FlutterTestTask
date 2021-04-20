@@ -7,3 +7,5 @@ You can use a long press anywhere on the screen to return previous background co
 Also, you can see description of the color on the screen (in RGB format & position in the list).
 
 You can run tests by typing "<project directory>$ flutter test"
+
+![alt text](https://github.com/levYKpi/FlutterTestTask/blob/main/flutter_01.png)
