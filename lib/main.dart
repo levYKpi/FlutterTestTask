@@ -53,21 +53,21 @@ class _MyHomePageState extends State<MyHomePage> {
             MyTextContainer(
               "your color is: ${this._myRandomColor.getColorVaue()}",
               FontStyle.normal,
-              18.0,
+              18.0, //FontSize
             ),
             MyTextContainer(
               "Hey there",
               FontStyle.normal,
-              32.0,
+              32.0, //FontSize
             ),
             MyTextContainer(
               "color in the list: ${this._myRandomColor.getColorsListLength()}",
               FontStyle.normal,
-              18.0,
+              18.0, //FontSize
             ),
-          ],
-        ),
-      ),
-    );
+          ], //<Widget>[]
+        ), //Column
+      ), //Container
+    ); //GestureDetector
   }
 }

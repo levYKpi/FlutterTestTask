@@ -34,10 +34,10 @@ class MyTextContainer extends StatelessWidget {
               color: this._shadowColor,
               offset: Offset(0, 0),
               blurRadius: this._shadow,
-            ),
-          ],
-        ),
-      ),
-    );
+            ), //Shadow
+          ], //<Shadow>[]
+        ), //TextStyle
+      ), //Text
+    ); //Container
   }
 }
